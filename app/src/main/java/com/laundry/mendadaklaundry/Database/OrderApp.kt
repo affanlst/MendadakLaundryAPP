@@ -5,9 +5,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.laundry.mendadaklaundry.Database.Order
 
-@Database(entities = [Order::class], version = 1)
+@Database(entities = [Order::class, UserEntity::class], version = 2)
 abstract class OrderApp: RoomDatabase() {
     abstract fun getOrderDao(): OrderDao
+    abstract fun userDao(): UserDao
 
     companion object{
         @Volatile
@@ -24,6 +25,6 @@ abstract class OrderApp: RoomDatabase() {
             context.applicationContext,
             OrderApp::class.java,
             name= "data_pesanan"
-        ).build()
+        ).fallbackToDestructiveMigration().build()
     }
 }
