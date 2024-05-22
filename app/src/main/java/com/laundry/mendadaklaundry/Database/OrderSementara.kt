@@ -2,8 +2,8 @@ package com.laundry.mendadaklaundry.Database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-@Entity("Order")
-data class Order(
+@Entity("Order_Sementara")
+data class OrderSementara(
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0,
     @ColumnInfo

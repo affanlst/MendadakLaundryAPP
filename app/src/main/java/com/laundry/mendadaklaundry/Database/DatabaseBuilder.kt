@@ -3,15 +3,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.laundry.mendadaklaundry.Database.Order
 
-@Database(entities = [Order::class], version = 1)
-abstract class OrderApp: RoomDatabase() {
+@Database(entities = [Order::class,RiwayatTb::class,OrderSementara::class], version = 2)
+abstract class DatabaseBuilder: RoomDatabase() {
     abstract fun getOrderDao(): OrderDao
-
+    abstract fun getRiwayatDao():RiwayatDao
+    abstract fun getOrderSemDao():OrderSemDao
     companion object{
         @Volatile
-        private var instance : OrderApp? = null
+        private var instance : DatabaseBuilder? = null
         private val LOCK = Any()
 
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
@@ -22,8 +22,8 @@ abstract class OrderApp: RoomDatabase() {
 
         private fun buildDatabase(context: Context) = Room.databaseBuilder(
             context.applicationContext,
-            OrderApp::class.java,
-            name= "data_pesanan"
-        ).build()
+            DatabaseBuilder::class.java,
+            name= "db_laundry"
+        ).allowMainThreadQueries().build()
     }
 }
