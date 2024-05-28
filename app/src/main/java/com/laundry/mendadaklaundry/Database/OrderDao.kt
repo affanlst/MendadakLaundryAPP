@@ -6,7 +6,7 @@ import com.laundry.mendadaklaundry.Database.Order
 @Dao
 interface OrderDao {
     @Insert
-    fun addOrder(order: Order)
+    fun addOrder(order: Order):Long
 
     @Query("SELECT * FROM `Order` ORDER BY id DESC")
     fun getAllOrder(): List<Order>

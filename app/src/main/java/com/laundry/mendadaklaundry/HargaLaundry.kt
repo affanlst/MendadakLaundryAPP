@@ -9,6 +9,7 @@ import android.widget.EditText
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.Calendar
 
 class HargaLaundry : AppCompatActivity() {
     var Jenis = ""
@@ -26,6 +27,7 @@ class HargaLaundry : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_harga_laundry)
         val bundle = intent.extras
+
         if (bundle != null){
             Jenis = bundle.getString("Jenis").toString()
             Paket = bundle.getString("Paket").toString()
@@ -115,6 +117,8 @@ class HargaLaundry : AppCompatActivity() {
         Total = harga*Kuantitas
     }
     fun inputData(Kategori : String,Paket : String,Kuantitas : Int,Biaya : Int, Jenis : String){
+        val calendar = Calendar.getInstance()
+        val currentDate = calendar.time
         val nameField = findViewById<EditText>(R.id.InputNamaPelanggan)
         val kategori = Kategori
         val paket = Paket

@@ -29,14 +29,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.Calendar
 
 class Home : Fragment() {
     var Jenis = ""
     lateinit var cartViewAdapter: AdapterOrder
     lateinit var dao : OrderSemDao
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-         dao = DatabaseBuilder.invoke(requireContext().applicationContext).getOrderSemDao()
+        dao = DatabaseBuilder.invoke(requireContext().applicationContext).getOrderSemDao()
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -63,6 +65,7 @@ class Home : Fragment() {
             override fun onClick(onProses: OrderSementara) {
                 startActivity(
                     Intent(requireContext().applicationContext, DetailTransaksi::class.java)
+//                        .putExtra("id",onProses.id)
                         .putExtra("nama",onProses.name)
                         .putExtra("No",onProses.phone)
                         .putExtra("jenis",onProses.Jenis)

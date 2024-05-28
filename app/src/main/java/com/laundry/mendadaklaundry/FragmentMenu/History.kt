@@ -13,6 +13,8 @@ import com.laundry.mendadaklaundry.Database.DatabaseBuilder
 import com.laundry.mendadaklaundry.Database.OrderSemDao
 import com.laundry.mendadaklaundry.Database.OrderSementara
 import com.laundry.mendadaklaundry.Database.RiwayatDao
+import com.laundry.mendadaklaundry.Database.RiwayatTb
+import com.laundry.mendadaklaundry.DetailRiwayat
 import com.laundry.mendadaklaundry.DetailTransaksi
 import com.laundry.mendadaklaundry.R
 import com.laundryukurukur.adapter.AdapterOrder
@@ -41,7 +43,20 @@ class History : Fragment() {
     }
     private fun setRecycler(){
         val list_proses: RecyclerView? = view?.findViewById(R.id.historyRv)
-        cartViewAdapter = AdapterRiwayat(arrayListOf())
+        cartViewAdapter = AdapterRiwayat(arrayListOf(),object : AdapterRiwayat.OnAdapterListener{
+            override fun onClick(onProses: RiwayatTb) {
+                startActivity(
+                    Intent(requireContext().applicationContext, DetailRiwayat::class.java)
+                        .putExtra("nama",onProses.name)
+                        .putExtra("No",onProses.phone)
+                        .putExtra("jenis",onProses.Jenis)
+                        .putExtra("kategori",onProses.kategori)
+                        .putExtra("paket",onProses.paket)
+                        .putExtra("kuantitas",onProses.kuantitas)
+                        .putExtra("harga",onProses.biaya)
+                )
+            }
+        })
         list_proses?.apply {
             layoutManager = LinearLayoutManager(requireContext().applicationContext)
             adapter = cartViewAdapter

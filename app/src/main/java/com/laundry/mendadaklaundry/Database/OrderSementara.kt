@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 @Entity("Order_Sementara")
 data class OrderSementara(
+    @ColumnInfo
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0,
     @ColumnInfo

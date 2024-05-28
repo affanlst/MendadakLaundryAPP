@@ -45,6 +45,7 @@ class KategoriLaundrySatuanFragment : Fragment() {
             kategori = "Gorden Besar"
             val intent = Intent(activity, PaketLaundry::class.java)
             bundle.putString("Kategori", kategori)
+            bundle.putString("Jenis", Jenis)
             intent.putExtras(bundle)
             activity?.startActivity(intent)
             fragmentManager.popBackStackImmediate()
@@ -54,6 +55,7 @@ class KategoriLaundrySatuanFragment : Fragment() {
             kategori = "Boneka dan Tas"
             val intent = Intent(activity, PaketLaundry::class.java)
             bundle.putString("Kategori", kategori)
+            bundle.putString("Jenis", Jenis)
             intent.putExtras(bundle)
             activity?.startActivity(intent)
             fragmentManager.popBackStackImmediate()
@@ -63,6 +65,7 @@ class KategoriLaundrySatuanFragment : Fragment() {
             kategori = "Topi"
             val intent = Intent(activity, PaketLaundry::class.java)
             bundle.putString("Kategori", kategori)
+            bundle.putString("Jenis", Jenis)
             intent.putExtras(bundle)
             activity?.startActivity(intent)
             fragmentManager.popBackStackImmediate()

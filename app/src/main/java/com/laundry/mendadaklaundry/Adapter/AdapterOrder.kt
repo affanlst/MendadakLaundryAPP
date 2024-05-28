@@ -15,6 +15,7 @@ import com.laundry.mendadaklaundry.R
 class AdapterOrder (private  val proses: ArrayList<OrderSementara>,private val listener: OnAdapterListener)
     : RecyclerView.Adapter<AdapterOrder.ProsesViewHolder>() {
     class ProsesViewHolder(view: View) :  RecyclerView.ViewHolder(view) {
+//        val textId : TextView = view.findViewById(R.id.textId)
         val textKtg: TextView = view.findViewById(R.id.textKategori)
         val textJenis : TextView = view.findViewById(R.id.textJenis)
         val textName: TextView = view.findViewById(R.id.textNama)
@@ -35,6 +36,7 @@ class AdapterOrder (private  val proses: ArrayList<OrderSementara>,private val l
 
     override fun onBindViewHolder(holder: ProsesViewHolder, position: Int) {
         val onProses = proses[position]
+//        holder.textId.text = onProses.id.toString()
         holder.textJenis.text = onProses.Jenis
         holder.textKtg.text = onProses.kategori
         holder.textName.text = onProses.name
