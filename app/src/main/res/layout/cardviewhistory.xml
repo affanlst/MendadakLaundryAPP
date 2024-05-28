@@ -3,7 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    android:id="@+id/cardHistory"
+    android:onClick="True"
+    >
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,23 +21,23 @@
             android:padding="5dp">
 
             <TextView
-                android:id="@+id/textKtg"
+                android:id="@+id/textJenis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
-                android:layout_gravity="center"
                 android:text="Cuci Basah"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
             <TextView
-                android:id="@+id/textPkt"
+                android:id="@+id/textKategori"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center"
                 android:layout_marginStart="20dp"
                 android:gravity="right"
-                android:text="paketnya"
+                android:text="Kategori"
                 android:textStyle="bold"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -52,6 +56,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="5dp">
+                <TextView
+                    android:id="@+id/textPaket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paketnya"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/textNama"
                     android:layout_width="wrap_content"
@@ -73,19 +84,6 @@
                     android:textStyle="bold"
                     android:textSize="20sp"/>
             </LinearLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="end">
-                <ImageView
-                    android:id="@+id/check"
-                    android:layout_width="50sp"
-                    android:layout_height="50sp"
-                    android:src="@drawable/check"
-                    android:layout_gravity="end|center_vertical"
-                    />
-            </RelativeLayout>
 
         </LinearLayout>
     </LinearLayout>
