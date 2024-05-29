@@ -2,12 +2,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="10dp"
     android:layout_height="match_parent"
-    tools:context=".FragmentMenu.History">
-    <androidx.cardview.widget.CardView
+    >
+    <TextView
+        android:id="@+id/proses"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text="Riwayat"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="23dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppinsmedium"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:id="@+id/FieldSearch"
+        android:layout_below="@id/proses"
+        android:layout_height="wrap_content"
+        android:hint="Search by name">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_search_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/historyRv"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/cardviewhistory"
+        android:layout_below="@id/FieldSearch"
+        />
 </RelativeLayout>
