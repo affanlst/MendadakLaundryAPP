@@ -15,7 +15,7 @@ import com.laundry.mendadaklaundry.R
 class AdapterOrder (private  val proses: ArrayList<OrderSementara>,private val listener: OnAdapterListener)
     : RecyclerView.Adapter<AdapterOrder.ProsesViewHolder>() {
     class ProsesViewHolder(view: View) :  RecyclerView.ViewHolder(view) {
-//        val textId : TextView = view.findViewById(R.id.textId)
+        //        val textId : TextView = view.findViewById(R.id.textId)
         val textKtg: TextView = view.findViewById(R.id.textKategori)
         val textJenis : TextView = view.findViewById(R.id.textJenis)
         val textName: TextView = view.findViewById(R.id.textNama)
@@ -59,5 +59,5 @@ class AdapterOrder (private  val proses: ArrayList<OrderSementara>,private val l
     interface OnAdapterListener{
         fun onDeletecart(onProses:OrderSementara)
         fun onClick(onProses: OrderSementara)
-        }
+    }
 }
