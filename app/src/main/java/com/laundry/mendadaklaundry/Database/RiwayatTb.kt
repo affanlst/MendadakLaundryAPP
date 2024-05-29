@@ -3,6 +3,7 @@ package com.laundry.mendadaklaundry.Database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.time.LocalDate
 
 @Entity("RiwayatTb")
 data class RiwayatTb(
@@ -21,5 +22,7 @@ data class RiwayatTb(
     @ColumnInfo
     var kuantitas: Int,
     @ColumnInfo
-    var biaya: Int
+    var biaya: Int,
+    @ColumnInfo
+    var tanggal: LocalDate = LocalDate.now()
 )

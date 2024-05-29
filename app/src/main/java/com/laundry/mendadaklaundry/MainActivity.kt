@@ -3,11 +3,13 @@ package com.laundry.mendadaklaundry
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import com.laundry.mendadaklaundry.FragmentMenu.History
 import com.laundry.mendadaklaundry.FragmentMenu.Home
 import com.laundry.mendadaklaundry.FragmentMenu.Profile
 import com.laundry.mendadaklaundry.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.laundry.mendadaklaundry.Database.DatabaseBuilder
@@ -21,6 +22,8 @@ import com.laundryukurukur.adapter.AdapterOrder
 import com.laundryukurukur.adapter.AdapterRiwayat
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -54,6 +57,7 @@ class History : Fragment() {
                         .putExtra("paket",onProses.paket)
                         .putExtra("kuantitas",onProses.kuantitas)
                         .putExtra("harga",onProses.biaya)
+
                 )
             }
         })
@@ -71,7 +75,6 @@ class History : Fragment() {
             }
         }
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

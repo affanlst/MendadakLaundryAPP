@@ -17,6 +17,7 @@ import com.laundry.mendadaklaundry.R
 class AdapterRiwayat ( private  val proses: ArrayList<RiwayatTb>,private val listener: AdapterRiwayat.OnAdapterListener)
     : RecyclerView.Adapter<AdapterRiwayat.ProsesViewHolder>() {
     class ProsesViewHolder(view: View) :  RecyclerView.ViewHolder(view) {
+//        val textTanggal: TextView = view.findViewById(R.id.txtTanggal)
         val cardHistory : CardView = view.findViewById(R.id.cardHistory)
         val textKtg: TextView = view.findViewById(R.id.textKategori)
         val textJenis : TextView = view.findViewById(R.id.textJenis)
@@ -35,6 +36,7 @@ class AdapterRiwayat ( private  val proses: ArrayList<RiwayatTb>,private val lis
 
     override fun onBindViewHolder(holder: ProsesViewHolder, position: Int) {
         val onProses = proses[position]
+//        holder.textTanggal.text = onProses.tanggal.toString()
         holder.textJenis.text = onProses.Jenis
         holder.textKtg.text = onProses.kategori
         holder.textName.text = onProses.name
